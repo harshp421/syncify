@@ -36,9 +36,9 @@ export default function Home() {
           />
         </div>
       </section>
-     <section className='mt-[40rem]'>
+     <section className=''>
      <InfiniteMovingCards
-        className=""
+        className="md:mt-[18rem] mt-[-100px]"
         items={clients}
         direction="right"
         speed="slow"
@@ -47,7 +47,7 @@ export default function Home() {
       <section>
         <HeroParallax products={products}></HeroParallax>
       </section>
-      <section className="mt-[100px]">
+      <section className="mt-[-500px]">
         <LampComponent />
         <div className="flex flex-wrap items-center justify-center flex-col md:flex-row gap-8 -mt-72">
           <CardContainer className="inter-var ">
