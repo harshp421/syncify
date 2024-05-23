@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+
 import { ClerkProvider} from '@clerk/nextjs'
+import { ThemeProvider } from "@/provider/theme-provider";
+import ModalProvider from "@/provider/model-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const font = DM_Sans({ subsets: ["latin"] });
 
@@ -28,7 +31,11 @@ export default function RootLayout({
             defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
-          >{children}
+          >
+            <ModalProvider>
+            {children}
+            <Toaster />
+            </ModalProvider>
           </ThemeProvider>
           </body>
     </html>
